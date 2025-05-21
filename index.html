@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nimma Utaa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-red-50 via-white to-red-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-800 dark:text-white font-sans transition-colors duration-500"
+  >
+    <header
+      class="w-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md px-6 py-4 sticky top-0 z-50"
+    >
+      <!-- <div class="max-w-7xl mx-auto flex justify-between items-center"> -->
+        <div class="w-full flex justify-between items-center">
+
+        <!-- Left: Logo -->
+        <h1 class="text-2xl font-bold text-red-600 dark:text-red-400 ">
+          Nimma Utaa
+        </h1>
+
+        <!-- Right: Nav & Controls -->
+        <div class="flex items-center space-x-6">
+          <!-- Desktop Nav (right aligned) -->
+          <nav class="hidden md:flex space-x-6">
+            <a
+              href="#"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 transition"
+              >Home</a
+            >
+            <a
+              href="#menu"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 transition"
+              >Menu</a
+            >
+            <a
+              href="#reservation"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 transition"
+              >Reservations</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 transition"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Dark Mode Toggle -->
+          <button
+            onclick="toggleDarkMode()"
+            class="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 hover:ring-2 hover:ring-red-400 transition"
+            title="Toggle Dark Mode"
+          >
+            🌓
+          </button>
+
+          <!-- Hamburger for Mobile -->
+          <button
+            onclick="toggleMobileMenu()"
+            class="md:hidden text-3xl text-gray-700 dark:text-white"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden mt-4 flex flex-col gap-3 text-center"
+      >
+        <a
+          href="#"
+          class="block text-gray-700 dark:text-gray-200 hover:text-red-600"
+          >Home</a
+        >
+        <a
+          href="#menu"
+          class="block text-gray-700 dark:text-gray-200 hover:text-red-600"
+          >Menu</a
+        >
+        <a
+          href="#reservation"
+          class="block text-gray-700 dark:text-gray-200 hover:text-red-600"
+          >Reservations</a
+        >
+        <a
+          href="#contact"
+          class="block text-gray-700 dark:text-gray-200 hover:text-red-600"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <!-- HOme landing page -->
+    <!-- Landing Section -->
+    <section
+      class="min-h-[calc(100vh-80px)] bg-gradient-to-br from-red-50 via-white to-red-100 dark:from-gray-900 dark:to-gray-800 flex flex-col-reverse md:flex-row items-center justify-between px-8 md:px-20 py-12 gap-10"
+    >
+      <!-- LEFT: Text Content -->
+      <div class="md:w-1/2 text-center md:text-left">
+        <h1
+          class="text-5xl md:text-6xl font-extrabold text-red-600 dark:text-red-400 mb-6 leading-tight"
+        >
+          Discover <span class="text-gray-900 dark:text-white">Nimma Utaa</span>
+        </h1>
+        <p
+          class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-xl"
+        >
+          A place where food meets soul. Dive into an unforgettable culinary
+          experience crafted with love and legacy.
+        </p>
+        <button
+          onclick="scrollToMenu()"
+          class="bg-red-500 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-red-600 hover:scale-105 transition duration-300"
+        >
+          🍽️ Explore Our Menu
+        </button>
+      </div>
+
+      <!-- RIGHT: Hero Image -->
+      <div class="md:w-1/2 flex justify-center">
+        <img
+          src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+          alt="Tasty Dish"
+          class="w-full max-w-md rounded-xl shadow-xl hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="bg-white dark:bg-gray-900 py-16 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-red-600 dark:text-red-400 mb-8">
+          Our Signature Dishes
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+          Carefully curated dishes that blend tradition with innovation. Freshly
+          prepared to tantalize your taste buds.
+        </p>
+
+        <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Dish 1 -->
+          <div
+            class="bg-red-50 dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1550547660-d9450f859349"
+              alt="Dish 1"
+              class="rounded-t-lg w-full h-48 object-cover"
+            />
+            <div class="p-5 text-left">
+              <h3 class="text-xl font-semibold text-red-600 dark:text-red-400">
+                Grilled Herb Chicken
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mt-2 text-sm">
+                Tender chicken grilled to perfection with fresh herbs and
+                spices.
+              </p>
+              <p class="mt-3 font-bold text-red-600 dark:text-red-300">₹400</p>
+            </div>
+          </div>
+
+          <!-- Dish 2 -->
+          <div
+            class="bg-red-50 dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+              alt="Dish 2"
+              class="rounded-t-lg w-full h-48 object-cover"
+            />
+            <div class="p-5 text-left">
+              <h3 class="text-xl font-semibold text-red-600 dark:text-red-400">
+                Classic Margherita Pizza
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mt-2 text-sm">
+                A wood-fired crust topped with fresh mozzarella, tomatoes, and
+                basil.
+              </p>
+              <p class="mt-3 font-bold text-red-600 dark:text-red-300">₹300</p>
+            </div>
+          </div>
+
+          <!-- Dish 3 -->
+          <div
+            class="bg-red-50 dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Dish 3"
+              class="rounded-t-lg w-full h-48 object-cover"
+            />
+            <div class="p-5 text-left">
+              <h3 class="text-xl font-semibold text-red-600 dark:text-red-400">
+                Spaghetti Aglio e Olio
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mt-2 text-sm">
+                A light Italian pasta tossed in garlic, olive oil, and chili
+                flakes.
+              </p>
+              <p class="mt-3 font-bold text-red-600 dark:text-red-300">₹99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="bg-red-50 dark:bg-gray-900 py-16 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-red-600 dark:text-red-400 mb-6">
+          Book a Table
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-8">
+          Reserve your table in advance and enjoy a delightful dining experience
+          at Utaa.
+        </p>
+
+        <form
+          class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-8 space-y-6 text-left"
+          onsubmit="handleReservation(event)"
+        >
+          <div>
+            <label for="name" class="block mb-1 font-semibold dark:text-white"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              placeholder="Your name"
+              required
+              class="w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-red-400 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block mb-1 font-semibold dark:text-white"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              id="email"
+              placeholder="you@example.com"
+              required
+              class="w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-red-400 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            />
+          </div>
+
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="flex-1">
+              <label for="date" class="block mb-1 font-semibold dark:text-white"
+                >Date</label
+              >
+              <input
+                type="date"
+                id="date"
+                required
+                class="w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-red-400 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              />
+            </div>
+
+            <div class="flex-1">
+              <label for="time" class="block mb-1 font-semibold dark:text-white"
+                >Time</label
+              >
+              <input
+                type="time"
+                id="time"
+                required
+                class="w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-red-400 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="guests" class="block mb-1 font-semibold dark:text-white"
+              >Number of Guests</label
+            >
+            <input
+              type="number"
+              id="guests"
+              placeholder="e.g. 2"
+              min="1"
+              max="20"
+              required
+              class="w-full px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-red-400 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3 bg-red-500 text-white rounded-full font-semibold hover:bg-red-600 transition"
+          >
+            Reserve Now
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <!-- Contact Section -->
+    <section id="contact" class="bg-red-50 dark:bg-gray-900 py-16 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-red-600 dark:text-red-400 mb-6">
+          Contact Us
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-10">
+          We'd love to hear from you! Reach out for reservations, feedback, or
+          general inquiries.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 text-left">
+          <!-- Contact Info -->
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Address
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                123 Culinary Street, Flavor Town, TX 75001
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Phone
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">+1 (91) 7780204732</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                Email
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                contact@utaa-bistro.com
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form
+            onsubmit="handleContact(event)"
+            class="space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+          >
+            <input
+              type="text"
+              placeholder="Your Name"
+              required
+              class="w-full px-4 py-2 rounded border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              required
+              class="w-full px-4 py-2 rounded border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
+            />
+            <textarea
+              rows="4"
+              placeholder="Your Message"
+              required
+              class="w-full px-4 py-2 rounded border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full py-2 bg-red-500 text-white font-semibold rounded-full hover:bg-red-600 transition"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 pt-12 pb-6 px-6 mt-12 border-t dark:border-gray-700"
+    >
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand Info -->
+        <div>
+          <h3 class="text-2xl font-bold text-red-600 dark:text-red-400 mb-2">
+            Nimma Utaa
+          </h3>
+          <p class="text-sm">
+            Taste the tradition. At Utaa, we serve the finest dishes inspired by
+            global flavors.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-lg mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-red-500 transition">Home</a></li>
+            <li>
+              <a href="#menu" class="hover:text-red-500 transition">Menu</a>
+            </li>
+            <li>
+              <a href="#reservation" class="hover:text-red-500 transition"
+                >Reservations</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-red-500 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="font-semibold text-lg mb-3">Contact</h4>
+          <ul class="text-sm space-y-2">
+            <li>📍 123 Culinary Street, Flavor Town, TX</li>
+            <li>📞 +1 (234) 567-8901</li>
+            <li>📧 contact@utaa-bistro.com</li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="font-semibold text-lg mb-3">Follow Us</h4>
+          <div class="flex space-x-4 text-xl">
+            <a href="#" class="hover:text-red-500 transition" title="Facebook"
+              >🌐</a
+            >
+            <a href="#" class="hover:text-red-500 transition" title="Instagram"
+              >📸</a
+            >
+            <a href="#" class="hover:text-red-500 transition" title="Twitter"
+              >🐦</a
+            >
+            <a href="#" class="hover:text-red-500 transition" title="YouTube"
+              >📺</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="mt-10 border-t pt-6 text-center text-sm dark:border-gray-700">
+        <p>&copy; 2025 Nimma Utaa Hotel. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle("dark");
+      }
+
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("hidden");
+      }
+
+      function scrollToMenu() {
+        const menuSection = document.querySelector("#menu");
+        if (menuSection) {
+          menuSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function handleReservation(e) {
+        e.preventDefault();
+        alert("Reservation submitted! We'll contact you soon.");
+      }
+
+      function handleContact(e) {
+        e.preventDefault();
+        alert("Message sent! We'll get back to you soon.");
+      }
+    </script>
+  </body>
+</html>
